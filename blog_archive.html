@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<link rel="stylesheet" href="/web/20061029025547cs_/http://atduskmusic.com/dusk.css" type="text/css"/>
+	<title>At Dusk - Blog Archive</title>
+</head>
+<body>
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1388534399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/atduskmusic.com\/blog_archive.html";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 450;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "29";
+var displayMonth = "Oct";
+var displayYear = "2006";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://atduskmusic.com/blog_archive.html" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20061029025547" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="/web/20060829193812/http://atduskmusic.com/blog_archive.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 Aug 2006"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 2:55:47 Oct 29, 2006">OCT</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="/web/20070630015853/http://atduskmusic.com/blog_archive.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="30 Jun 2007"><strong>JUN</strong></a>
+		                
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="/web/20061011224558/http://atduskmusic.com/blog_archive.html" title="22:45:58 Oct 11, 2006" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 2:55:47 Oct 29, 2006">29</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="/web/20070630015853/http://atduskmusic.com/blog_archive.html" title="1:58:53 Jun 30, 2007" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
+		                
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2005
+                       
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 2:55:47 Oct 29, 2006">2006</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="/web/20080705231744/http://www.atduskmusic.com/blog_archive.html" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="5 Jul 2008"><strong>2008</strong></a>
+		                
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="/web/20061029025547*/http://atduskmusic.com/blog_archive.html" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>6 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">5 May 06 - 5 Jul 08</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:450px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:450px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="450"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=450_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:9:000010010200_2007:-1:000001000000_2008:-1:000000100000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000000000_2012:-1:000000000000_2013:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+	<div id ="header">
+		
+	<p><span style="color:#FB0F0C;font-weight:bold;font-size:large;float:left;">at dusk</span><a href="/web/20061029025547/http://atduskmusic.com/index.html" class="selected">blog</a> <a href="/web/20061029025547/http://atduskmusic.com/bio.html">bio</a><a href="/web/20061029025547/http://atduskmusic.com/music.html">music</a><a href="/web/20061029025547/http://atduskmusic.com/live.html">live</a><a href="/web/20061029025547/http://atduskmusic.com/press.html">press</a><a href="/web/20061029025547/http://atduskmusic.com/contact.html">contact</a></p>
+	</div>
+	
+	<div id="container">
+		
+	<div id="right">
+		<h2>2004</h2>
+
+		<dl class="blog">
+			<dt>September 28</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/album-made-by-not-us.html">An Album Made By Not Us</a></dd>
+			<dt>September 23</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/my-floridian-excursion.html">My Floridian Excursion</a></dd>
+			<dt>September 17</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/new-features-on-atduskmusiccom.html">New Features on atduskmusic.com!</a></dd>
+			<dt>September 16</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/odd.html">Odd</a></dd>
+			<dt>September 08</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/lost-in-transl-ai-tion.html">Lost in Transl-AI-tion</a></dd>
+			<dt>September 07</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/engineer-bryce-goggin-has-exerted.html">Engineer Bryce Goggin</a></dd>
+			<dt>September 04</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/first-review-of-heights-is-in.html">First Review of Heights Is In!</a></dd>
+										<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/easy-to-translate-french-review.html">The Easy To Translate French Review</a></dd>
+			<dt>September 01</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/09/olympics-of-sleep.html">The Olympics of Sleep</a></dd>
+		</dl>
+
+		<dl class="blog">
+		<dt>August 24</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/our-first-interview-from-portlands.html">Our First Interview (from Portland's Lost Sister City of Toronto)</a></dd>	
+		<dt>August 23</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/my-left-toe.html">My Left Toe</a></dd>
+		<dt>August 22</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/sort-of-homecoming.html">A Sort of Homecoming</a></dd>
+		<dt>August 15</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/toronto-torontolpo.html">Toronto Torontolpo</a></dd>
+		<dt>August 12</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/will-spins-yarn.html">Will Spins A Yarn</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/transplant-community-reclaiming-east.html">The Transplant Community (Reclaiming the East)</a></dd>
+		<dt>August 07</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/our-nations-capital.html">Our Nation's Capital</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/nashville-press.html">Nashville Press</a></dd>
+		<dt>August 01</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/tour-dates-addedchanged.html">Tour Dates Added/Changed</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/08/tucson-az-shinobitown-usa.html">Tucson, AZ - Shinobitown USA</a></dd>
+		</dl>
+
+		<dl class="blog">
+
+		<dt>July 29</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/brief-history-of-tour-denton-interlude.html">A Brief History of Tour -- Denton Interlude</a></dd>
+		<dt>July 27</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/brief-history-of-tour-vol-1-sf.html">A Brief History Of Tour Vol. 1 (SF)</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/arrival.html">the arrival</a></dd>
+		<dt>July 22</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/dereliction.html">Dereliction</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/goals.html">Goals</a></dd>
+		<dt>July 16</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/intranational-tour-begins.html">Intranational Tour Begins!</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/pdxpop-after.html">PDXPOP After!</a></dd>
+		<dt>July 07</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/heights-available-but-not-desperate_07.html">HEIGHTS AVAILABLE - but not desperate</a></dd>
+		<dt>July 02</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/pdxbangnow.html">PDXBANGNOW!</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/such-great-heights.html">Such Great Heights</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/07/wondrous-night-of-first-exposure.html">The Wondrous Night of First Exposure</a></dd>
+		</dl>
+
+
+		<dl class="blog">
+		<dt>June 30</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/unanticipated-glory.html">Unanticipated Glory!</a></dd>
+		<dt>June 29</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/video-from-heights-sessions.html">video from the heights sessions</a></dd>
+								<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/much-digits.html">Much Digits!</a></dd>
+		<dt>June 25</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/snowed-under.html">Snowed under</a></dd>
+		<dt>June 22</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/productive-member.html">A Productive Member</a></dd>
+		<dt>June 21</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/album-anti-psychotherapy.html">album anti-psychotherapy</a></dd>
+		<dt>June 19</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/albums-done.html">Album's Done</a></dd>
+		<dt>June 18</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/big-yellow-box-is-my-enemy.html">The Big Yellow Box Is My Enemy</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/nocturnal-emission.html">Nocturnal Emission</a></dd>
+		<dt>June 17</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/suddenly-its-summer.html">Suddenly Its Summer</a></dd>
+		<dt>June 15</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/done-3.html">Done (3)</a></dd>
+		<dt>June 14</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/done-2.html">Done (2)</a></dd>
+		<dt>June 13</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/final-mastering-notes.html">Final Mastering Notes</a></dd>
+		<dt>June 12</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/done-1.html">Done (1)</a></dd>
+		<dt>June 08</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/retraction.html">retraction</a></dd>
+		<dt>June 06</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/80-percent-real.html">80 percent real</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/producer-pack.html">producer pack</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/heights.html">Heights</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/heights_06.html">Heights</a></dd>
+		<dt>June 04</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/learning-experience.html">learning experience</a></dd>
+		<dt>June 02</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/in-box.html">In The Box</a></dd>
+		<dt>June 01</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/austin-venues.html">austin venues</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/06/traxx.html">Traxx</a></dd>
+		</dl>
+
+		<dl class="blog">
+		<dt>May 31</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/we-could-do-anything.html">We! Could! Do! Anything!</a></dd>
+		<dt>May 30</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/midnight-siesta.html">Midnight siesta</a></dd>
+		<dt>May 29</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/on-verge-of-greatness.html">on the verge of greatness</a></dd>
+		<dt>May 27</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/3-days-596-things.html">3 Days, 596 Things</a></dd>
+		<dt>May 26</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/220am.html">Taking Stock</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/taking-stock.html">taking stock</a></dd>
+		<dt>May 25</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/unsurfing.html">unsurfing</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/ps-and-ego-checkin.html">PS and Ego-Checkin</a></dd>
+		<dt>May 24</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/support-crew-strawberries.html">Support Crew Strawberries</a></dd>
+		<dt>May 23</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/tangerosas.html">Tangerosas</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/hearing-yourself-speedbump.html">Hearing Yourself / Speedbump</a></dd>
+		<dt>May 22</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/flap-skin-flap.html">Flap Skin Flap</a></dd>
+		<dt>May 21</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/ghost-razor.html">Ghost Razor</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/monitors.html">the monitors</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/too-many-stuff-not-enough-thing.html">Too Many Stuff! Not Enough Thing!</a></dd>
+		<dt>May 20</dt><dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/going-distance.html">going the distance</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/im-into-something-good.html">i'm into something good</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/oh-oh-oh-its-beautiful.html">Oh Oh Oh Its Beautiful</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/expatriating-nabokov-or-indulging.html">Expatriating Nabokov - Or Indulging The Bladder</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/our-first-post.html">Our First Post</a></dd>
+							<dd><a href="/web/20061029025547/http://www.speakeasy.org/~gborenstein/2004/05/so-heres-new-index.html">so here's the new blog</a></dd>
+		</dl>
+	</div>
+	
+	<div id="left">
+		<dl class="album">
+		<dt>Blog Archive</dt>
+		<dd><img src="/web/20061029025547im_/http://static.flickr.com/24/46050269_e30576cf59_b.jpg" alt="show setup"></dd>
+		<dd><p><em>This archive is, right now, highly incomplete. Getting things out of Blogger turns out to be very labor intensive (if you know a trick, please <a href="mailto:greg@mfdz.com">let me know</a>). For now, I'm working forwards from the very earliest posts, so those are what's here. Enjoy!</em></p></dd>
+		</dl>
+	</div>
+	
+	</div>
+	<div id="footer">
+		<p><a href="/web/20061029025547/http://atduskmusic.com/index.html" class="selected">blog</a> <a href="/web/20061029025547/http://atduskmusic.com/bio.html">bio</a><a href="/web/20061029025547/http://atduskmusic.com/music.html">music</a><a href="/web/20061029025547/http://atduskmusic.com/live.html">live</a><a href="/web/20061029025547/http://atduskmusic.com/press.html">press</a><a href="/web/20061029025547/http://atduskmusic.com/contact.html">contact</a></p>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 2:55:47 Oct 29, 2006 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:28:24 Nov 5, 2013.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
